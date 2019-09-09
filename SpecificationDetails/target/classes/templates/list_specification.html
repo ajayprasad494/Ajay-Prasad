@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Specification</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Specification List</h1>
+		<a href="new">Create New Specification</a> <br /> <br />
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Specification ID</th>
+					<th>Specification Name</th>
+					<th>Description</th>
+					<th>Thumbnail</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="specification : ${listSpecifications}">
+					<td th:text="${specification.Specification_Id}">Specification
+						ID</td>
+					<td th:text="${specification.Specification_Name}">Specification
+						Name</td>
+					<td th:text="${specification.Description}">Description</td>
+					<td th:text="${specification.Thumbnail}">Thumbnail</td>
+					<td><a
+						th:href="@{'/edit/' + ${specification.Specification_Id}}">Edit</a>
+						&nbsp;&nbsp;&nbsp; <a
+						th:href="@{'/delete/' + ${specification.Specification_Id}}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

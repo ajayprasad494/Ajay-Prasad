@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Edit Specification</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Edit Specification</h1>
+		<br />
+		<form action="#" th:action="@{/save}" th:object="${specification}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>				
+					<td>Specification ID</td>
+					<td>
+						<input type="text" th:field="*{Specification_Id}" readonly="readonly" />
+					</td>
+				</tr>			
+				<tr>				
+					<td>Specification Name</td>
+					<td>
+						<input type="text" th:field="*{Specification_Name}" />
+					</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td><input type="text" th:field="*{Description}" /></td>
+				</tr>
+				<tr>
+					<td>Thumbnail</td>
+					<td><input type="text" th:field="*{Thumbnail}" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit">Save</button> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
